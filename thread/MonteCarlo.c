@@ -4,7 +4,7 @@
 #include <math.h>
 #include <time.h>
 
-#define NUM_POINTS 1000000
+#define NUM_POINTS 10000
 #define NUM_THREADS 4
 
 typedef struct
@@ -24,6 +24,7 @@ void *monte_carlo(void *arg)
     {
         double x = ((double)rand() / RAND_MAX) * 2.0 - 1.0; 
         double y = ((double)rand() / RAND_MAX) * 2.0 - 1.0;
+        printf("Point %d: (%f, %f)\n", i+1, x, y);
 
         if (x * x + y * y <= 1.0)
         { 
